@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>
+      git-cards
+    </title>
+    <link rel='stylesheet' href='/static/css/base.css' />
+    <style>
+      :root {
+      {{#each platform.colors}}
+        {{print_color_var}}
+      {{/each}}
+      }
+    </style>
+    {{#if style.template}}
+      <link
+        rel='stylesheet'
+        href='/static/css/templates/{{style.template}}.css'
+      />
+    {{else}}
+      <style>
+        {{style.style}}
+      </style>
+    {{/if}}
+  </head>
+  <body>
+    <div class='wrapper'>
+      <div class='wrapper__badge'>
+        <div class='wrapper__badge__icon icon {{platform.icon}}'></div>
+        {{platform.name}}
+      </div>
+      <div class='wrapper__path'>
+        <p>
+          <a
+            rel='noopener noreferrer'
+            target='_blank'
+            href='{{ownerLink}}'
+            class='wrapper__path__owner'
+          >{{owner}}</a>/<a
+            rel='noopener noreferrer'
+            target='_blank'
+            href='{{repoLink}}'
+            class='wrapper__path__repo'
+          >{{owner}}</a>
+        </p>
+      </div>
+      {{#if description}}
+        <div class='wrapper__description'>{{description}}</div>
+      {{/if}}
+      {{#if homepage}}
+        <div class="wrapper__homepage"><a rel="noopener noreferrer" target="_blank" href="{{homepage}}">{{homepage}}</a></div>
+      {{/if}}
+      <div class="wrapper__stats">
+        <div class="wrapper__stats__item"><div class='wrapper__stats__item__icon icon icon-star'></div> {{stars}}</div>
+        <div class="wrapper__stats__item"><div class='wrapper__stats__item__icon icon icon-fork'></div> {{forks}}</div>
+      </div>
+      <div class="wrapper__link"><a rel="noopener noreferrer" target="_blank" href="{{link}}" class="icon icon-link"></a></div>
+    </div>
+  </body>
+</html>
