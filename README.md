@@ -25,4 +25,4 @@ $ pnpm run start:prod
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+[MIT license](LICENSE).
