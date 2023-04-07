@@ -2,6 +2,8 @@ export enum GIT_PLATFORMS {
   'github' = 'github',
 }
 
+export type ICardContext = ICardInfo | ICardError;
+
 export interface ICardInfo {
   owner: string;
   ownerLink: string;
@@ -12,6 +14,11 @@ export interface ICardInfo {
   stars: number;
   forks: number;
   platform: IplatformMeta;
+  style: ICardStyle;
+}
+
+export interface ICardError {
+  error: string;
   style: ICardStyle;
 }
 

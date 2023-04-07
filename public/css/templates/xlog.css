@@ -16,6 +16,17 @@
     }
 }
 
+.wrapper--error {
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper__error {
+    color: rgb(var(--color-text) / 0.4);
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
 .wrapper__badge {
     align-items: center;
     border-bottom-left-radius: 0.75rem;
